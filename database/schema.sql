@@ -96,6 +96,4 @@ INSERT INTO organizations (name, email, password, description, location) VALUES
 
 -- Insert sample opportunities
 INSERT INTO opportunities (title, description, organization_id, location, event_date, event_time, required_skills, status) VALUES
-('Beach Cleanup Drive', 'Join us for a coastal cleanup initiative', 1, 'Juhu Beach, Mumbai', '2025-11-05', '08:00:00', 'Environmental Cleanup', 'open'),
-('Food Distribution Event', 'Help distribute meals to underprivileged communities', 1, 'Dharavi, Mumbai', '2025-11-10', '10:00:00', 'Event Management,Cooking', 'open'),
-('Blood Donation Camp', 'Volunteer coordination for blood donation drive', 1, 'Andheri, Mumbai', '2025-11-15', '09:00:00', 'Healthcare,Event Management', 'open');
+-- if we want to add from here we can add or insert direct opportunities from application

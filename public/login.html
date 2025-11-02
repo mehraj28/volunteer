@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Volunteer Connect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"> Volunteer Connect</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-card card">
+            <div class="card__body">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="register">Register</button>
+                </div>
+
+                <div class="user-type-selector">
+                    <button class="user-type-btn active" data-type="volunteer">👤 Volunteer</button>
+                    <button class="user-type-btn" data-type="organization">🏢 Organization</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form">
+                    <h2>Welcome Back</h2>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Login</button>
+                    <div id="loginError" class="error-message"></div>
+                </form>
+
+                <!-- Register Form -->
+                <form id="registerForm" class="auth-form hidden">
+                    <h2>Create Account</h2>
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="registerPhone">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Location</label>
+                        <input type="text" class="form-control" id="registerLocation">
+                    </div>
+                    <div class="form-group volunteer-only">
+                        <label class="form-label">Bio</label>
+                        <textarea class="form-control" id="registerBio" rows="3"></textarea>
+                    </div>
+                    <div class="form-group org-only hidden">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" id="registerDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group org-only hidden">
+                        <label class="form-label">Website</label>
+                        <input type="url" class="form-control" id="registerWebsite">
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Register</button>
+                    <div id="registerError" class="error-message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo"> Volunteer Connect</h1>
+            <div class="nav-links">
+                <span id="userName" class="user-name"></span>
+                <button onclick="logout()" class="btn btn--secondary btn--sm">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <button class="sidebar-link active" data-section="opportunities"> Browse Opportunities</button>
+                <button class="sidebar-link" data-section="my-applications"> My Applications</button>
+                <button class="sidebar-link" data-section="profile"> Profile</button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Opportunities Section -->
+            <section id="opportunities" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Available Opportunities</h2>
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search opportunities..." class="form-control">
+                        <button onclick="searchOpportunities()" class="btn btn--primary">Search</button>
+                    </div>
+                </div>
+                <div class="filters">
+                    <select id="locationFilter" class="form-control">
+                        <option value="">All Locations</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Bangalore">Bangalore</option>
+                    </select>
+                </div>
+                <div id="opportunitiesList" class="opportunities-grid"></div>
+            </section>
+
+            <!-- My Applications Section -->
+            <section id="my-applications" class="dashboard-section hidden">
+                <h2>My Applications</h2>
+                <div id="applicationsList" class="applications-list"></div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile" class="dashboard-section hidden">
+                <h2>My Profile</h2>
+                <div id="profileContent" class="profile-content"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="modal hidden">
+        <div class="modal-content card">
+            <div class="card__body">
+                <h3 id="modalTitle"></h3>
+                <div id="modalBody"></div>
+                <form id="applicationForm">
+                    <div class="form-group">
+                        <label class="form-label">Why do you want to volunteer?</label>
+                        <textarea class="form-control" id="applicationMessage" rows="4" required></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" onclick="closeModal()" class="btn btn--secondary">Cancel</button>
+                        <button type="submit" class="btn btn--primary">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
